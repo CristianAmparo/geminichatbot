@@ -21,12 +21,18 @@ const generationConfig = {
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:8080", // Replace with your Vue.js app URL
-    methods: ["GET", "POST"],
-  },
-});
+const allowedOrigins = [
+    "http://localhost:5173/",
+    "http://localhost:8080/",
+    "https://cristianamparoportfolio.vercel.app/",
+  ];
+  
+  const io = new Server(server, {
+    cors: {
+      origin: allowedOrigins,
+      methods: ["GET", "POST"],
+    },
+  });
 
 app.use(cors());
 app.use(express.json());
