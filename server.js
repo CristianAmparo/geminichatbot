@@ -79,8 +79,10 @@ io.on("connection", async (socket) => {
     socket.on("chat message", async (msg) => {
       try {
         const result = await chatSession.sendMessage(msg);
+        let formattedResponse = result.response.text();
+        formattedResponse = formattedResponse.replace(/\*/g, "");
         socket.emit("chat message", {
-          message: result.response.text(),
+          message: formattedResponse,
           timestamp: Date.now(),
         });
       } catch (error) {
