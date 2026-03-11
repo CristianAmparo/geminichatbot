@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
     <html>
     <head><title>Gemini Chat Test</title></head>
     <body>
-        <h1>Test Gemini Chat</h1>
+        <h1>Chatbot is Working</h1>
         <script src="/socket.io/socket.io.js"></script>
         <script>
             const socket = io();
