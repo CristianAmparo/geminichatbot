@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html>
-    <head><title>Gemini Chat Working</title></head>
+    <head><title>Gemini Chat Connected</title></head>
     <body>
         <h1>Chatbot is Working</h1>
         <script src="/socket.io/socket.io.js"></script>
